@@ -1,0 +1,55 @@
+
+local ZoidLoader = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local LoadingLabel = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+
+
+ZoidLoader.Name = "ZoidLoader"
+ZoidLoader.Parent = game.CoreGui
+ZoidLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ZoidLoader
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.Position = UDim2.new(0.5, -214, 0.5, -53)
+Main.Size = UDim2.new(0, 428, 0, 106)
+
+LoadingLabel.Name = "LoadingLabel"
+LoadingLabel.Parent = Main
+LoadingLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+LoadingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LoadingLabel.Position = UDim2.new(0.257009357, 0, 0.210000008, 0)
+LoadingLabel.Size = UDim2.new(0, 200, 0, 50)
+LoadingLabel.Font = Enum.Font.Bangers
+LoadingLabel.Text = ""
+LoadingLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoadingLabel.TextScaled = true
+LoadingLabel.TextSize = 31.000
+LoadingLabel.TextWrapped = true
+
+UICorner.Parent = Main
+
+-- Scripts:
+
+local function HWTVV_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+	wait(4)
+	script.Parent.Visible = false
+end
+coroutine.wrap(HWTVV_fake_script)()
+local function BJJEX_fake_script() -- LoadingLabel.LocalScript 
+	local script = Instance.new('LocalScript', LoadingLabel)
+	while true do
+		script.Parent.Text="Z"
+		wait(1)
+		script.Parent.Text="Zo"
+		wait(1)
+		script.Parent.Text="Zoi"
+		wait(1)
+		script.Parent.Text="Zoid"
+		wait(1)
+	end
+end
+coroutine.wrap(BJJEX_fake_script)()
